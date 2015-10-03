@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Responsive Full-Screen Tiles Menu</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="stylesheet" href="css/tiles.css">
+    </head>
+    <body>
+        <a href="#" target="_blank" title="Image 1" alt="Image 1"><div id="tiles_1" class="tiles_cover_img fullpage"><div class="tiles_caption"><p>Responsive Full-Screen Tiles</p></div></div></a>
+        <a href="#" target="_blank" title="Image 2" alt="Image 2"><div id="tiles_2" class="tiles_cover_img twoCol">
+            <div class="tiles_caption"><p>Caption for Image 2</p></div>
+        </div></a>
+        <a href="#" target="_blank" title="Image 3" alt="Image 3"><div id="tiles_3" class="tiles_cover_img twoCol">
+            <div class="tiles_caption"><p>Caption for Image 3</p></div>
+        </div></a>
+
+        <a href="#" title="Image 4" alt="Image 4"><div id="tiles_4" class="tiles_cover_img twoCol">
+            <div class="tiles_caption"><p>Caption for Image 4</p></div>
+        </div></a>
+
+        <a href="#" target="_blank" title="Image 5" alt="Image 5"><div id="tiles_5" class="tiles_cover_img twoCol">
+            <div class="tiles_caption"><p>Caption for Image 5</p></div>
+        </div></a>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+            var tiles_js = function(){
+                function init(){
+                    resize();
+                }
+                function resize(){
+                    $(".tiles_cover_img").css("height",($(window).height()/3));
+                }
+                return {
+                    init:init,
+                    resize:resize
+                }
+            }();
+            $(document).ready(function(){
+                tiles_js.init();
+                $(window).resize(tiles_js.resize);
+            });
+        </script>
+
+    </body>
+</html>
+
+
